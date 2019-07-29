@@ -30,10 +30,10 @@ class FireBaseSingelton {
     let db = Firestore.firestore()
 
     //MARK:- Insert objects into the table.
-    func insertData(dict: Dictionary<String, AnyObject>, tableName:Table.Name, onResponse: @escaping Handlers.response) {
+    func insertData(dict: Dictionary<String, AnyObject>, name:Table.Name, onResponse: @escaping Handlers.response) {
         
         var ref: DocumentReference? = nil
-        ref = db.collection(tableName.rawValue).addDocument(data: [
+        ref = db.collection(name.rawValue).addDocument(data: [
             "email": dict["email"] as AnyObject,
             "name": dict["name"] as AnyObject,
             "password": dict["password"] as AnyObject,
@@ -49,9 +49,9 @@ class FireBaseSingelton {
     }
     
     //MARK:- Fetch all the values from the table
-    func fetchObjectsFrom(tableName:Table.Name) {
+    func fetchObjectsFrom(name:Table.Name) {
 
-        db.collection(tableName.rawValue).getDocuments() { (querySnapshot, err) in
+        db.collection(name.rawValue).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -62,9 +62,9 @@ class FireBaseSingelton {
         }
     }
     
-    func fetchSingleObject(tableName:Table.Name, referenceID: String, onResponse: @escaping Handlers.response) {
+    func fetchSingleObject(name:Table.Name, referenceID: String, onResponse: @escaping Handlers.response) {
         
-        db.collection(tableName.rawValue).document(referenceID).getDocument { (object, error) in
+        db.collection(name.rawValue).document(referenceID).getDocument { (object, error) in
             if let err = error {
                 onResponse(nil, err)
             } else {
@@ -73,9 +73,9 @@ class FireBaseSingelton {
         }
     }
     
-    func deleteObject(tableName:Table.Name, referenceID: String) {
+    func deleteObject(name:Table.Name, referenceID: String) {
         
-        db.collection(tableName.rawValue).document(referenceID).delete { (error) in
+        db.collection(name.rawValue).document(referenceID).delete { (error) in
             print(error?.localizedDescription ?? "manu")
         }
     }
@@ -89,7 +89,7 @@ class FireBaseSingelton {
             } else {
                 
                 if let referID = snapShot?.user.uid {
-                    self.fetchSingleObject(tableName: .userList, referenceID: referID, onResponse: { (userModel, err) in
+                    self.fetchSingleObject(name: .userList, referenceID: referID, onResponse: { (userModel, err) in
                         if error != nil {
                             onResponse(nil, error)
                         } else {
@@ -134,7 +134,7 @@ class FireBaseSingelton {
                 print("Error updating document: \(err)")
             } else {
                 print("Document successfully updated")
-                self.fetchSingleObject(tableName: .userList, referenceID: userID, onResponse: onResponse)
+                self.fetchSingleObject(name: .userList, referenceID: userID, onResponse: onResponse)
             }
         }
     }
