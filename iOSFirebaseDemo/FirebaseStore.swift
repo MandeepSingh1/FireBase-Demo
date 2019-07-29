@@ -10,7 +10,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseAuth
 
-struct FireBaseTable {
+struct Table {
     enum Name : String {
         case userList = "UsersList"
     }
@@ -30,7 +30,7 @@ class FireBaseSingelton {
     let db = Firestore.firestore()
 
     //MARK:- Insert objects into the table.
-    func insertData(dict: Dictionary<String, AnyObject>, tableName:FireBaseTable.Name, onResponse: @escaping Handlers.response) {
+    func insertData(dict: Dictionary<String, AnyObject>, tableName:Table.Name, onResponse: @escaping Handlers.response) {
         
         var ref: DocumentReference? = nil
         ref = db.collection(tableName.rawValue).addDocument(data: [
@@ -49,7 +49,7 @@ class FireBaseSingelton {
     }
     
     //MARK:- Fetch all the values from the table
-    func fetchObjectsFrom(tableName:FireBaseTable.Name) {
+    func fetchObjectsFrom(tableName:Table.Name) {
 
         db.collection(tableName.rawValue).getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -62,7 +62,7 @@ class FireBaseSingelton {
         }
     }
     
-    func fetchSingleObject(tableName:FireBaseTable.Name, referenceID: String, onResponse: @escaping Handlers.response) {
+    func fetchSingleObject(tableName:Table.Name, referenceID: String, onResponse: @escaping Handlers.response) {
         
         db.collection(tableName.rawValue).document(referenceID).getDocument { (object, error) in
             if let err = error {
@@ -73,7 +73,7 @@ class FireBaseSingelton {
         }
     }
     
-    func deleteObject(tableName:FireBaseTable.Name, referenceID: String) {
+    func deleteObject(tableName:Table.Name, referenceID: String) {
         
         db.collection(tableName.rawValue).document(referenceID).delete { (error) in
             print(error?.localizedDescription ?? "manu")
@@ -128,7 +128,7 @@ class FireBaseSingelton {
     //MARK:- Register on FireStore
     private func createUserOnFireStore(userID: String, dict: Dictionary<String, AnyObject>, onResponse: @escaping Handlers.response) {
         //Stored Objects in the Cloud Store FireBase
-        let newUserReference = db.collection(FireBaseTable.Name.userList.rawValue).document(userID)
+        let newUserReference = db.collection(Table.Name.userList.rawValue).document(userID)
         newUserReference.setData(dict) { (err) in
             if let err = err {
                 print("Error updating document: \(err)")
