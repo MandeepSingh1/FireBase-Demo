@@ -132,8 +132,26 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatarSmallImage" translatesAutoresizingMaskIntoConstraints="NO" id="Lfo-4F-T1J">
+                                        <rect key="frame" x="132" y="109" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="3Aj-0x-82s"/>
+                                            <constraint firstAttribute="height" constant="150" id="OON-aa-xhb"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="75"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DmE-Uf-70U">
+                                        <rect key="frame" x="132" y="109" width="150" height="150"/>
+                                        <connections>
+                                            <action selector="tapOnImage:" destination="stS-fa-TdI" eventType="touchUpInside" id="Dnn-ZN-peQ"/>
+                                        </connections>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UhW-4d-7F6">
-                                        <rect key="frame" x="30" y="129" width="354" height="180"/>
+                                        <rect key="frame" x="30" y="289" width="354" height="180"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPy-DW-hkB">
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="45"/>
@@ -177,7 +195,7 @@
                                         </constraints>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEK-X3-3VE">
-                                        <rect key="frame" x="20" y="372" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="532" width="374" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="MGa-nO-QPX"/>
@@ -193,11 +211,17 @@
                                 <constraints>
                                     <constraint firstItem="UhW-4d-7F6" firstAttribute="leading" secondItem="3nm-MJ-KfZ" secondAttribute="leading" constant="30" id="2u6-Rc-8HR"/>
                                     <constraint firstAttribute="trailing" secondItem="XEK-X3-3VE" secondAttribute="trailing" constant="20" id="3Qs-L3-HNj"/>
+                                    <constraint firstItem="DmE-Uf-70U" firstAttribute="trailing" secondItem="Lfo-4F-T1J" secondAttribute="trailing" id="45e-dw-j8b"/>
                                     <constraint firstAttribute="trailing" secondItem="UhW-4d-7F6" secondAttribute="trailing" constant="30" id="7cw-HF-rAV"/>
                                     <constraint firstItem="XEK-X3-3VE" firstAttribute="leading" secondItem="3nm-MJ-KfZ" secondAttribute="leading" constant="20" id="IaE-ci-xyu"/>
-                                    <constraint firstItem="UhW-4d-7F6" firstAttribute="top" secondItem="qKB-Iz-OZM" secondAttribute="bottom" constant="50" id="LKJ-n3-fgZ"/>
+                                    <constraint firstItem="DmE-Uf-70U" firstAttribute="bottom" secondItem="Lfo-4F-T1J" secondAttribute="bottom" id="NdW-Lw-Mu1"/>
+                                    <constraint firstItem="UhW-4d-7F6" firstAttribute="top" secondItem="Lfo-4F-T1J" secondAttribute="bottom" constant="30" id="Nqz-CU-9eh"/>
+                                    <constraint firstItem="DmE-Uf-70U" firstAttribute="leading" secondItem="Lfo-4F-T1J" secondAttribute="leading" id="QLe-9q-B4B"/>
                                     <constraint firstAttribute="trailing" secondItem="qKB-Iz-OZM" secondAttribute="trailing" constant="20" id="eYC-IE-ySz"/>
                                     <constraint firstAttribute="bottom" secondItem="XEK-X3-3VE" secondAttribute="bottom" constant="100" id="fba-Pl-6xK"/>
+                                    <constraint firstItem="Lfo-4F-T1J" firstAttribute="centerX" secondItem="3nm-MJ-KfZ" secondAttribute="centerX" id="fcZ-n9-gGU"/>
+                                    <constraint firstItem="Lfo-4F-T1J" firstAttribute="top" secondItem="qKB-Iz-OZM" secondAttribute="bottom" constant="30" id="hvZ-hO-Z8I"/>
+                                    <constraint firstItem="DmE-Uf-70U" firstAttribute="top" secondItem="Lfo-4F-T1J" secondAttribute="top" id="hxH-Gx-gOJ"/>
                                     <constraint firstItem="qKB-Iz-OZM" firstAttribute="top" secondItem="3nm-MJ-KfZ" secondAttribute="top" constant="50" id="iHv-pJ-cxi"/>
                                     <constraint firstItem="XEK-X3-3VE" firstAttribute="top" secondItem="UhW-4d-7F6" secondAttribute="bottom" constant="63" id="lg7-Zc-dC4"/>
                                     <constraint firstItem="XEK-X3-3VE" firstAttribute="centerX" secondItem="3nm-MJ-KfZ" secondAttribute="centerX" id="sGL-Ow-ZY2"/>
@@ -216,6 +240,7 @@
                         <viewLayoutGuide key="safeArea" id="2Js-DO-RrP"/>
                     </view>
                     <connections>
+                        <outlet property="avatarImage" destination="Lfo-4F-T1J" id="5y6-kz-nfw"/>
                         <outlet property="email" destination="SPy-DW-hkB" id="liV-g6-e3q"/>
                         <outlet property="name" destination="QI0-8k-vIt" id="LPd-Vo-44c"/>
                         <outlet property="password" destination="6IN-bb-ZrQ" id="eeb-k5-Paz"/>
@@ -245,4 +270,7 @@
             <point key="canvasLocation" x="1050.7246376811595" y="476.78571428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="avatarSmallImage" width="50" height="50"/>
+    </resources>
 </document>

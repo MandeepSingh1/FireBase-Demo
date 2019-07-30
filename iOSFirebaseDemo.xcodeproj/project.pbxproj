@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		438C9E6C9D9015742C32990F /* Pods_iOSFirebaseDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7FF325CB1C56398CDAAA8E /* Pods_iOSFirebaseDemo.framework */; };
 		7EB7797E39CA2E0E3E5D62F5 /* Pods_iOSFirebaseDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D3BE9055398C0B6B1137B5 /* Pods_iOSFirebaseDemoUITests.framework */; };
+		90680E4222F00980001B9B66 /* FireBaseHandlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90680E3F22F00980001B9B66 /* FireBaseHandlers.swift */; };
+		90680E4322F00980001B9B66 /* AuthFireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90680E4022F00980001B9B66 /* AuthFireBase.swift */; };
+		90680E4422F00980001B9B66 /* FirebaseSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90680E4122F00980001B9B66 /* FirebaseSingleton.swift */; };
+		90680E4622F00999001B9B66 /* FireBase+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90680E4522F00999001B9B66 /* FireBase+Storage.swift */; };
 		90A8F0A722EEB49000CE5D2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8F0A622EEB49000CE5D2C /* AppDelegate.swift */; };
 		90A8F0AC22EEB49000CE5D2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A8F0AA22EEB49000CE5D2C /* Main.storyboard */; };
 		90A8F0AE22EEB49200CE5D2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A8F0AD22EEB49200CE5D2C /* Assets.xcassets */; };
@@ -16,7 +20,6 @@
 		90A8F0BC22EEB49200CE5D2C /* iOSFirebaseDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8F0BB22EEB49200CE5D2C /* iOSFirebaseDemoTests.swift */; };
 		90A8F0C722EEB49200CE5D2C /* iOSFirebaseDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8F0C622EEB49200CE5D2C /* iOSFirebaseDemoUITests.swift */; };
 		90A8F0D522EEB4BA00CE5D2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90A8F0D422EEB4BA00CE5D2C /* GoogleService-Info.plist */; };
-		90A8F0D722EEBCBF00CE5D2C /* FirebaseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8F0D622EEBCBF00CE5D2C /* FirebaseStore.swift */; };
 		90A8F0DB22EEF95900CE5D2C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8F0DA22EEF95900CE5D2C /* LoginVC.swift */; };
 		90A8F0DD22EEF96E00CE5D2C /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A8F0DC22EEF96E00CE5D2C /* RegisterVC.swift */; };
 		E60F38875E7F609C9D938AEB /* Pods_iOSFirebaseDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF23C8E7A937F840E215316 /* Pods_iOSFirebaseDemoTests.framework */; };
@@ -45,6 +48,10 @@
 		48C2DAB9D9D84E07EC2B4DBE /* Pods-iOSFirebaseDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSFirebaseDemoTests.release.xcconfig"; path = "Target Support Files/Pods-iOSFirebaseDemoTests/Pods-iOSFirebaseDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		5FD70922E64D3FF5FB23F399 /* Pods-iOSFirebaseDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSFirebaseDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-iOSFirebaseDemoTests/Pods-iOSFirebaseDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F0DEFF3EDE2FA1DEDBDEA87 /* Pods-iOSFirebaseDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSFirebaseDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSFirebaseDemoUITests/Pods-iOSFirebaseDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		90680E3F22F00980001B9B66 /* FireBaseHandlers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireBaseHandlers.swift; sourceTree = "<group>"; };
+		90680E4022F00980001B9B66 /* AuthFireBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthFireBase.swift; sourceTree = "<group>"; };
+		90680E4122F00980001B9B66 /* FirebaseSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseSingleton.swift; sourceTree = "<group>"; };
+		90680E4522F00999001B9B66 /* FireBase+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FireBase+Storage.swift"; sourceTree = "<group>"; };
 		90A8F0A322EEB49000CE5D2C /* iOSFirebaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSFirebaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A8F0A622EEB49000CE5D2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90A8F0AB22EEB49000CE5D2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,7 +65,6 @@
 		90A8F0C622EEB49200CE5D2C /* iOSFirebaseDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSFirebaseDemoUITests.swift; sourceTree = "<group>"; };
 		90A8F0C822EEB49200CE5D2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90A8F0D422EEB4BA00CE5D2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		90A8F0D622EEBCBF00CE5D2C /* FirebaseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStore.swift; sourceTree = "<group>"; };
 		90A8F0DA22EEF95900CE5D2C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		90A8F0DC22EEF96E00CE5D2C /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		9FF23C8E7A937F840E215316 /* Pods_iOSFirebaseDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSFirebaseDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +111,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		90680E3E22F00980001B9B66 /* FireBase+Helper */ = {
+			isa = PBXGroup;
+			children = (
+				90680E3F22F00980001B9B66 /* FireBaseHandlers.swift */,
+				90680E4022F00980001B9B66 /* AuthFireBase.swift */,
+				90680E4122F00980001B9B66 /* FirebaseSingleton.swift */,
+				90680E4522F00999001B9B66 /* FireBase+Storage.swift */,
+			);
+			path = "FireBase+Helper";
+			sourceTree = "<group>";
+		};
 		90A8F09A22EEB49000CE5D2C = {
 			isa = PBXGroup;
 			children = (
@@ -130,8 +147,8 @@
 		90A8F0A522EEB49000CE5D2C /* iOSFirebaseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				90680E3E22F00980001B9B66 /* FireBase+Helper */,
 				90A8F0D422EEB4BA00CE5D2C /* GoogleService-Info.plist */,
-				90A8F0D622EEBCBF00CE5D2C /* FirebaseStore.swift */,
 				90A8F0A622EEB49000CE5D2C /* AppDelegate.swift */,
 				90A8F0DA22EEF95900CE5D2C /* LoginVC.swift */,
 				90A8F0DC22EEF96E00CE5D2C /* RegisterVC.swift */,
@@ -396,9 +413,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90A8F0D722EEBCBF00CE5D2C /* FirebaseStore.swift in Sources */,
+				90680E4422F00980001B9B66 /* FirebaseSingleton.swift in Sources */,
+				90680E4322F00980001B9B66 /* AuthFireBase.swift in Sources */,
+				90680E4622F00999001B9B66 /* FireBase+Storage.swift in Sources */,
 				90A8F0DB22EEF95900CE5D2C /* LoginVC.swift in Sources */,
 				90A8F0A722EEB49000CE5D2C /* AppDelegate.swift in Sources */,
+				90680E4222F00980001B9B66 /* FireBaseHandlers.swift in Sources */,
 				90A8F0DD22EEF96E00CE5D2C /* RegisterVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
