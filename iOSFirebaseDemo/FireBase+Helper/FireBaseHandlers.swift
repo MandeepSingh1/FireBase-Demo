@@ -21,7 +21,7 @@ struct Table {
 
 struct Handlers {
     typealias response = (_ data :AnyObject?, _ err: Error?) -> ()
-    typealias onMessage = (_ success:AnyObject) -> () // for success case
+    typealias callBack = (_ success:AnyObject) -> () // for success case
 }
 
 
@@ -44,7 +44,7 @@ extension Date {
 
 extension UIViewController {
     
-    func openImagePickerViewController(sourceType: UIImagePickerController.SourceType, mediaTypes: [String], callBack: Handlers.onMessage?) {
+    func openImagePickerViewController(sourceType: UIImagePickerController.SourceType, mediaTypes: [String], callBack: Handlers.callBack?) {
         
         if sourceType == .camera {
             let cameraAuthorizationStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
@@ -81,7 +81,7 @@ extension UIViewController {
         }
     }
     
-    func openAccessCameraPop(mediaTypes: [String], callBack: Handlers.onMessage?) {
+    func openAccessCameraPop(mediaTypes: [String], callBack: Handlers.callBack?) {
         
         AVCaptureDevice.requestAccess(for: AVMediaType.video) { (granted) in
             
@@ -93,7 +93,7 @@ extension UIViewController {
         }
     }
     
-    func openAccessPhotoLibraryPop(mediaTypes: [String], callBack: Handlers.onMessage?) {
+    func openAccessPhotoLibraryPop(mediaTypes: [String], callBack: Handlers.callBack?) {
         
         PHPhotoLibrary.requestAuthorization({(status:PHAuthorizationStatus)in
             

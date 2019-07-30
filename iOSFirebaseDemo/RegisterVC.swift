@@ -48,7 +48,7 @@ class RegisterVC: UIViewController {
             
             guard let data = image.pngData() else {return}
             
-            BucketStorage.shared.uploadMedia(data: data) { (url, error) in
+            BucketStorage.shared.uploadMedia(data: data, onResponse: { (url, error) in
                 guard let bucketURL = url as? URL else {
                     print(error?.localizedDescription ?? "Not found")
                     return
@@ -60,8 +60,13 @@ class RegisterVC: UIViewController {
                 dict["password"] = password as AnyObject
                 dict["phoneNumber"] = number as AnyObject
                 dict["photo"] = bucketURL.absoluteString as AnyObject
-
+                
                 self.registerProcess(dict: dict)
+            }) { (progress) in
+                
+                if let percentComplete = progress as? Double {
+                    print(percentComplete)
+                }
             }
         } else {
             print("image not Selected")
