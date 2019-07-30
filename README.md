@@ -7,7 +7,9 @@ There is 2 View Controllers
 call Backs.
 
 2. RegisterVC:- Where all the registration process has been shown to the user with the fields like name, email, password, phoneNumber.
-  After registration on firebase we are storing the objects into Firestore. 
+  After registration on firebase we are storing the objects into Firestore.
+  
+  # Also user can upload his photo onto the firebase and they will get the url of photo and it will store onto firestore database.
   
 Am Working on the projects and i haven't used this in the past. This is my first time if somebody finds any mistake please tell me i would love to work on issues.
 
