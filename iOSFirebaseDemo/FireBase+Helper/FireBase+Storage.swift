@@ -34,7 +34,7 @@ class BucketStorage {
 
 extension BucketStorage {
     
-    func createReference() -> StorageReference  {
+   private func createReference() -> StorageReference  {
         
         let imageID = Constants.generateID()
         let riversRef = bucketReference.child("\(Constants.folderName + imageID).jpg")
@@ -111,6 +111,10 @@ extension BucketStorage {
             
             progress(percentComplete as AnyObject)
         }
+    }
+    
+    func deinitObserver() {
+        self.currentUploadTask?.removeAllObservers()
     }
 }
 

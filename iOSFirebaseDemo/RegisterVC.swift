@@ -22,6 +22,7 @@ class RegisterVC: UIViewController {
         super.viewDidLoad()
     }
     
+    //MARK: Actions
     @IBAction func register(_ sender: UIButton) {
         
         guard let emailText = self.email.text, !emailText.isEmpty else {
@@ -44,6 +45,22 @@ class RegisterVC: UIViewController {
             return
         }
         
+        var dict = Dictionary<String, AnyObject>()
+        dict["name"] = name as AnyObject
+        dict["email"] = emailText as AnyObject
+        dict["password"] = password as AnyObject
+        dict["phoneNumber"] = number as AnyObject
+        
+        self.uploadMediaToFirebase(dict: dict)
+    }
+    
+    @IBAction func tapOnImage(_ sender: UIButton) {
+        self.uploadProfilePicClick()
+    }
+    
+    //MARK:- Start Image/Video Uploading to Firebase and after fetching image URL from firebase, create the object onto firebase and firestore.
+    func uploadMediaToFirebase(dict:Dictionary<String, AnyObject>) {
+        
         if let image = self.avatarImage.image {
             
             guard let data = image.pngData() else {return}
@@ -54,14 +71,10 @@ class RegisterVC: UIViewController {
                     return
                 }
                 
-                var dict = Dictionary<String, AnyObject>()
-                dict["name"] = name as AnyObject
-                dict["email"] = emailText as AnyObject
-                dict["password"] = password as AnyObject
-                dict["phoneNumber"] = number as AnyObject
-                dict["photo"] = bucketURL.absoluteString as AnyObject
+                var oldModel = dict
+                oldModel["photo"] = bucketURL.absoluteString as AnyObject
                 
-                self.registerProcess(dict: dict)
+                self.registerOnFireStore(dict: oldModel)
             }) { (progress) in
                 
                 if let percentComplete = progress as? Double {
@@ -73,7 +86,8 @@ class RegisterVC: UIViewController {
         }
     }
     
-    func registerProcess(dict:Dictionary<String, AnyObject>) {
+    //MARK:- Register on Firebase
+    func registerOnFireStore(dict:Dictionary<String, AnyObject>) {
         
         FireBaseSingelton.sharedInstance.createUseronFirebase(dict: dict) { (response, error) in
             
@@ -83,10 +97,6 @@ class RegisterVC: UIViewController {
                 print(response ?? "hureeey")
             }
         }
-    }
-    
-    @IBAction func tapOnImage(_ sender: UIButton) {
-        self.uploadProfilePicClick(sender: sender)
     }
 
     /*
@@ -111,8 +121,7 @@ extension RegisterVC : UITextFieldDelegate {
 
 extension RegisterVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    //MARK:- Cell Delegates
-    func uploadProfilePicClick(sender: UIButton) {
+    func uploadProfilePicClick() {
         
         let mediaTypeArray = [kUTTypeImage as String, kUTTypeMovie as String]
         
