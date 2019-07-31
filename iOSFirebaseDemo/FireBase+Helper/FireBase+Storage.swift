@@ -37,7 +37,7 @@ extension BucketStorage {
     func createReference() -> StorageReference  {
         
         let imageID = Constants.generateID()
-        let riversRef = bucketReference.child("\(Constants.mediaPath + imageID).jpg")
+        let riversRef = bucketReference.child("\(Constants.folderName + imageID).jpg")
         return riversRef
     }
     

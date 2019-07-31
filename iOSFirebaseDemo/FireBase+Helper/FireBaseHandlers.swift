@@ -27,8 +27,7 @@ struct Handlers {
 
 struct Constants {
     static let bucketURL = "gs://iosdemo-579ca.appspot.com/"
-    
-    static let mediaPath = "Bucket/"
+    static let folderName = "Bucket/"
     
     static func generateID() -> String {
         let timeStamp = Int(Date().toMillis())
@@ -61,6 +60,8 @@ extension UIViewController {
                 callBack?(false as AnyObject)
             case .notDetermined:
                 self.openAccessCameraPop(mediaTypes: mediaTypes, callBack: callBack)
+            @unknown default:
+                break
             }
         } else {
             let photsAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
@@ -77,6 +78,8 @@ extension UIViewController {
                 callBack?(false as AnyObject)
             case .notDetermined:
                 self.openAccessPhotoLibraryPop(mediaTypes: mediaTypes, callBack: callBack)
+            @unknown default:
+                break
             }
         }
     }
@@ -110,6 +113,8 @@ extension UIViewController {
                 break
             case .notDetermined:
                 self.alertPromptToAllowCameraAccessViaSetting(accessType: "Library")
+                break
+            @unknown default:
                 break
             }
         })

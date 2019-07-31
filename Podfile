@@ -10,6 +10,7 @@ target 'iOSFirebaseDemo' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  pod 'IQKeyboardManagerSwift'
 
   target 'iOSFirebaseDemoTests' do
     inherit! :search_paths

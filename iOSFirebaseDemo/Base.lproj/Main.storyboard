@@ -34,7 +34,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="D3Q-85-lXt"/>
                                                 </connections>
@@ -43,7 +43,7 @@
                                                 <rect key="frame" x="0.0" y="50" width="354" height="50"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="2K0-pn-jkc"/>
                                                 </connections>
@@ -157,7 +157,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="354" height="45"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="stS-fa-TdI" id="vek-QW-gvh"/>
                                                 </connections>
@@ -166,7 +166,7 @@
                                                 <rect key="frame" x="0.0" y="45" width="354" height="45"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="stS-fa-TdI" id="lGU-Zn-Pi7"/>
                                                 </connections>
@@ -175,7 +175,7 @@
                                                 <rect key="frame" x="0.0" y="90" width="354" height="45"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="stS-fa-TdI" id="2aA-lo-6nz"/>
                                                 </connections>
@@ -184,7 +184,7 @@
                                                 <rect key="frame" x="0.0" y="135" width="354" height="45"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="stS-fa-TdI" id="XhY-hj-oXB"/>
                                                 </connections>
